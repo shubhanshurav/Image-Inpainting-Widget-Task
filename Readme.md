@@ -2,6 +2,7 @@
 
 Image Inpainting Widget allows users to upload an image, draw a mask using a brush, and export the mask image for further use.  
 
+![Preview](image.png)
 ---
 
 ## **Features**  
