@@ -1,44 +1,56 @@
-# Workflow Builder
+# Image Inpainting Widget
 
-<img src="https://github.com/user-attachments/assets/495e2b75-7432-46f0-9d88-587d5a13a01f" alt="1" width="500" height="400">
+Image Inpainting Widget allows users to upload an image, draw a mask using a brush, and export the mask image for further use.  
 
+---
 
-## Overview
+## **Features**  
+- Upload an image (JPEG/PNG).  
+- Draw masks on the uploaded image using brush tools.  
+- Adjust brush size dynamically.  
+- Export the generated mask image as a separate file.  
+- View the original image and the mask side by side.  
 
-Workflow Builder is a web application that allows users to create, visualize, and execute workflows through a graphical interface. It utilizes **React.js** with **ReactFlow** for the frontend and **Node.js** with **Express.js** for the backend. The workflows can be saved, retrieved, and executed using defined tasks, such as filtering data, waiting, converting data formats, and sending HTTP requests.
+---
 
-## Features
+## **How to Run the Project Locally**  
 
-- **Drag-and-Drop Interface:** Allows users to build workflows by dragging and connecting nodes.
-- **Custom Nodes:** Includes nodes like Start, Filter, Wait, Convert, and Send POST Request.
-- **Save and Load Workflows:** Save workflows to a database and load previously saved workflows.
-- **Execute Workflows:** The backend processes the workflow and executes tasks in the defined order.
-- **Visual Feedback:** Provides real-time visual feedback to indicate the execution of workflow steps.
+### **Prerequisites**  
+- Node.js (v16 or above) installed on your system.  
+- Git installed.  
 
-## Technology Stack
+### **Steps to Run**  
+1. Clone the repository:  
+  ```
+   git clone <paste repository-url>
+   cd <repository-folder>
+  ```
 
-- **Frontend:**
-  - React.js
-  - ReactFlow
-  - Redux (for state management)
-  - Tailwind CSS (for styling)
+2. Install fabricjs-react Dependencies: 
+  ```
+   npm install fabricjs-react
+  ```
+3. Start the development server:
+  ```
+    npm start
+  ```
 
-- **Backend:**
-  - Node.js
-  - Express.js
-  - Multer (for file uploads)
-  - Axios (for making HTTP requests)
-  - MongoDB  (for storing workflow data)
+## **Libraries Used**
+- **React:** For building the application.
+- **Fabric.js:** For canvas drawing functionality.
+- **TailwindCSS:** For responsive and modern styling.
 
-- **File Structure:**
-  
-![image](https://github.com/user-attachments/assets/3cacad71-a2eb-4a39-8cf1-4650b9c694c2)
+## **Challenges Faced**  
 
+### **Canvas Mask Rendering**  
+- **Challenge**: Ensuring paths drawn on the canvas were correctly exported as a mask image.  
+- **Solution**: Created a temporary canvas to handle black-and-white rendering for the mask.  
 
-## Getting Started
+### **Image Scaling**  
+- **Challenge**: Scaling the uploaded image to fit within the canvas dimensions.  
+- **Solution**: Utilized Fabric.js's `setBackgroundImage` with scaling options.  
 
-### 1. Clone the Repository
+### **Dynamic Brush Controls**  
+- **Challenge**: Synchronizing brush size changes dynamically.  
+- **Solution**: Updated the `freeDrawingBrush` properties on `Fabric.js` when brush size was adjusted.  
 
-```bash
-git clone https://github.com/your-username/workflow-builder.git
-cd workflow-builder
