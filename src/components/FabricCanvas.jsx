@@ -44,7 +44,7 @@ export const FabricCanvas = ({
   const enableDrawingMode = () => {
     editor.canvas.isDrawingMode = true;
     editor?.canvas.freeDrawingBrush &&
-      (editor.canvas.freeDrawingBrush.color = "white");
+      (editor.canvas.freeDrawingBrush.color = "yellow");
   };
 
   return (
